@@ -26,8 +26,10 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'android.arch.lifecycle:extensions:1.0.0'
 
     kapt 'com.android.databinding:compiler:3.0.1'
+    kapt 'android.arch.lifecycle:compiler:1.0.0'
 
     testImplementation 'junit:junit:4.12'
 

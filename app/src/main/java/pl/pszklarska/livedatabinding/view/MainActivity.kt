@@ -1,10 +1,14 @@
-package pl.pszklarska.livedatabinding
+package pl.pszklarska.livedatabinding.view
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil.setContentView
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import pl.pszklarska.livedatabinding.R
 import pl.pszklarska.livedatabinding.databinding.ActivityMainBinding
 import pl.pszklarska.livedatabinding.model.Kitty
+import pl.pszklarska.livedatabinding.viewmodel.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val binding: ActivityMainBinding = setContentView(this, R.layout.activity_main)
-        val kitty = Kitty("Fluffy", 3)
-        binding.kitty = kitty
+
+        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel.getKittyData().observe(this, Observer<Kitty> { binding.kitty = it })
     }
 }

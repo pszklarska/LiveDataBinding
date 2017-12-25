@@ -1,20 +1,19 @@
 package pl.pszklarska.livedatabinding.viewmodel
 
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableField
-import android.databinding.ObservableInt
 
 class MainViewModel : ViewModel() {
 
     private val kittyRepository = KittyRepository()
 
-    val kittyName = ObservableField<String>()
-    val kittyAge = ObservableInt()
+    val kittyName = MutableLiveData<String>()
+    val kittyAge = MutableLiveData<Int>()
 
     init {
         kittyRepository.receiveNewKitties {
-            kittyName.set(it.name)
-            kittyAge.set(it.age)
+            kittyName.postValue(it.name)
+            kittyAge.postValue(it.age)
         }
     }
 }

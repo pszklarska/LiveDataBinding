@@ -2,8 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-            name="kitty"
-            type="pl.pszklarska.livedatabinding.model.Kitty" />
+            name="viewModel"
+            type="pl.pszklarska.livedatabinding.viewmodel.MainViewModel" />
     </data>
 
     <LinearLayout
@@ -14,11 +14,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{kitty.name}" />
+            android:text="@{viewModel.kittyName}" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{Integer.toString(kitty.age)}" />
+            android:text="@{Integer.toString(viewModel.kittyAge)}" />
     </LinearLayout>
 </layout>

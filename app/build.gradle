@@ -3,11 +3,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "pl.pszklarska.livedatabinding"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,15 +21,18 @@ android {
     dataBinding {
         enabled = true
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'android.arch.lifecycle:extensions:1.0.0'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'android.arch.lifecycle:extensions:1.1.0'
 
-    kapt 'com.android.databinding:compiler:3.1.0-alpha06'
-    kapt 'android.arch.lifecycle:compiler:1.0.0'
+    kapt 'com.android.databinding:compiler:3.1.0-alpha09'
+    kapt 'android.arch.lifecycle:compiler:1.1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

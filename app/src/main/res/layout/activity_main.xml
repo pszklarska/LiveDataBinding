@@ -1,24 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="viewModel"
             type="pl.pszklarska.livedatabinding.viewmodel.MainViewModel" />
     </data>
 
     <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.kittyName}" />
+            android:text="@{viewModel.kittyName}"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{Integer.toString(viewModel.kittyAge)}" />
+            android:text="@{Integer.toString(viewModel.kittyAge)}"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 </layout>

@@ -8,17 +8,12 @@ import pl.pszklarska.livedatabinding.R
 import pl.pszklarska.livedatabinding.databinding.ActivityMainBinding
 import pl.pszklarska.livedatabinding.viewmodel.MainViewModel
 
-
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val binding: ActivityMainBinding? = setContentView(this, R.layout.activity_main)
+        val binding: ActivityMainBinding = setContentView(this, R.layout.activity_main)
         val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        binding?.let {
-            it.viewModel = viewModel
-            it.setLifecycleOwner(this)
-        }
+        binding.viewModel = viewModel
+        binding.setLifecycleOwner(this)
     }
 }

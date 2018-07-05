@@ -4,9 +4,7 @@ import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-
     private val kittyRepository = KittyRepository()
-
     val kittyName = MutableLiveData<String>()
     val kittyAge = MutableLiveData<Int>()
 

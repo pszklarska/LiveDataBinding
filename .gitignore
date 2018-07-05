@@ -11,6 +11,5 @@ captures/
 release/
 .*/
 build/
-gradle*
 !gradle.properties
 !.idea/dictionaries/
